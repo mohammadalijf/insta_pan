@@ -55,7 +55,7 @@ def crop(image_path, destination_path, aspect_ratio, optimize):
             box = (width_offset, height_offset, width_offset + box_width,
                    height - height_offset)
             crop = img.crop(box)
-            if (optimize):
+            if (optimize and width_offset > 1080):
                 # calculate optimized width and heights
                 optimized_width = 1080
                 optimized_height = int(optimized_width * box_height /
